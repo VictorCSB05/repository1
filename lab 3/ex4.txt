@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int numero = 1; 
+    int num;
+    printf("Digite um número: ");
+    scanf("%d", &num);
+    
+    printf("Divisores de %d: ", num);
+    
+    while (numero <= num) {  
+        if (num % numero == 0) {
+            printf("%d", numero);
+            if (numero != num) {
+                printf(" ");
+            }
+        }
+        
+        numero = numero + 1;
+    }
+    
+    printf("\n");
+    
+    return 0;
+}

@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+  int dado;
+  int cont = 0;
+  srand(time(NULL));
+  dado=1+rand()%100;
+    printf("valor do dado lançado: %d\n", dado);
+
+  printf("tente adivinhar o valor\n");
+  printf("digite seu palpite: ");
+  int palpite;
+  scanf("%d", &palpite);
+  if (palpite < 1 or palpite > 100) {
+    printf("número inválido\n");
+  }
+  else
+  {
+    
+    while (palpite!= dado) 
+    {
+      if (palpite < dado) {
+         printf("chute um número maior\n");
+      cont= cont + 1;
+      }
+      if (palpite > dado) {
+         printf("chute um número menor\n");
+      cont = cont + 1;
+      }
+      if (cont == 5) {
+        printf("o número máximo de tentativas foi excedido\n");
+        break;
+      }
+      
+      printf("digite seu palpite: ");
+    scanf("%d", &palpite);
+    }
+    if (palpite == dado) {
+      printf("parabéns, voce acertou!\n");
+      printf("voce fez %d tentativas\n", cont);
+    }
+      
+  }
+  
+  printf("valor do dado lançado: %d\n", dado);
+  
+}
